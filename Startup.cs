@@ -33,6 +33,7 @@ namespace dockerApi
             var password = Configuration["DBPassword"] ?? "Da4EhBEQ5FiUmleVeFF1";
             var database = Configuration["Database"] ?? "Colours";
             services.AddDbContext<ColourContext>(options => options.UseSqlServer($"Server={server},{port};Initial Catalog={database};User ID={user};Password={password}"));
+            // services.AddDbContext<ColourContext>(options => options.UseSqlServer("Server=tcp:dockertestttt.database.windows.net,1433;Initial Catalog=dockertest;Persist Security Info=False;User ID=azureadmin;Password=VmI8bgIWqIA1arkW667u;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
             services.AddControllers();
         }
 
